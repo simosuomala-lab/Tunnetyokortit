@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e65349">
+<title>Tunnetyökortit – Viha</title>
+<style>
+:root{
+  --ink:#182238; --muted:#6f7787; --line:#eadfd9; --red:#e65349;
+  --red-soft:#fff0ec; --cream:#fffaf6; --panel:#ffffff; --soft:#faf7f4;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:#f7f4f1; color:var(--ink);
+  font-family:Inter,ui-rounded,"Segoe UI",system-ui,-apple-system,sans-serif;
+}
+button{font:inherit;color:inherit}
+.app{
+  max-width:1240px; margin:24px auto; background:#fff; border-radius:28px;
+  overflow:hidden; box-shadow:0 18px 48px rgba(68,45,34,.10);
+  display:grid; grid-template-columns:248px 1fr; min-height:900px;
+}
+aside{
+  padding:28px 20px; border-right:1px solid var(--line); background:#fffdfb;
+}
+.brand{font-weight:900;letter-spacing:.04em}
+.tagline{font-size:12px;color:var(--muted);margin:4px 0 26px}
+.label{font-size:10px;font-weight:900;letter-spacing:.13em;color:#9a9a9a;margin:20px 8px 8px}
+.emotion{
+  width:100%; border:0; background:transparent; border-radius:14px; padding:8px;
+  display:flex; align-items:center; gap:11px; cursor:pointer; font-weight:760; text-align:left;
+}
+.emotion:hover{background:#faf5f1}
+.emotion.active{background:#fff0ed;color:#c83e35}
+.thumb{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:24px}
+.joy{background:#fff3bd}.sad{background:#dff0fb}.anger{background:#ffd8d3}
+.fear{background:#ece2fa}.surprise{background:#fff1c9}.disgust{background:#dff0d7}
+.infoBtn{
+  width:100%;border:0;background:transparent;padding:9px 8px;text-align:left;color:#60697a;cursor:pointer
+}
+.quote{
+  margin-top:24px;background:#fff5ee;border-radius:16px;padding:14px;font-size:12px;line-height:1.45
+}
+main{padding:30px 38px 42px;min-width:0}
+.top{
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  color:#7d8490;font-size:13px;margin-bottom:20px
+}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}
+.eyebrow{font-size:11px;font-weight:900;letter-spacing:.13em;color:var(--red)}
+h1{font-size:clamp(56px,7vw,92px);line-height:.9;margin:10px 0 18px;color:var(--red)}
+.lead{font-size:17px;line-height:1.65;max-width:620px}
+.art{
+  min-height:355px;border-radius:28px;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(255,255,255,.96) 0 15%,transparent 16%),
+    linear-gradient(145deg,#ffe1db,#fff7f3);
+  display:grid;place-items:center;position:relative;overflow:hidden
+}
+.bolt{position:absolute;color:#e85045;font-size:48px;font-weight:900}
+.b1{left:13%;top:18%;transform:rotate(-16deg)}.b2{right:14%;bottom:17%;transform:rotate(14deg)}
+.cat{font-size:150px;filter:drop-shadow(0 12px 8px rgba(0,0,0,.08));transform:scaleX(1.06)}
+.caption{position:absolute;bottom:18px;font-size:12px;color:#8b6d64;background:#fff9;padding:6px 10px;border-radius:99px}
+.message{
+  margin:24px 0;background:var(--red-soft);border-radius:18px;padding:18px 20px;
+  display:flex;gap:14px;align-items:flex-start
+}
+.message .icon{font-size:27px}.message b{display:block;margin-bottom:5px}.message p{margin:0;line-height:1.5}
+.trio,.exercises,.related{display:grid;gap:14px}
+.trio{grid-template-columns:repeat(3,1fr)}
+.smallcard{border:1px solid var(--line);border-radius:18px;padding:18px;background:#fff}
+.smallcard .ico{font-size:25px}.smallcard h3{font-size:14px;margin:8px 0}
+.smallcard p{font-size:13px;color:var(--muted);line-height:1.55;margin:0}
+.sectionTitle{font-size:12px;letter-spacing:.13em;font-weight:900;margin:30px 0 12px}
+.exercises{grid-template-columns:repeat(3,1fr)}
+.exercise{
+  border:1px solid var(--line);background:#fff;border-radius:20px;padding:18px;text-align:left;
+  cursor:pointer;transition:.18s
+}
+.exercise:hover{transform:translateY(-2px);box-shadow:0 9px 25px rgba(50,30,20,.08)}
+.exercise .excat{font-size:54px;display:block;margin-bottom:9px}
+.exercise b{font-size:13px}.exercise p{font-size:12px;color:var(--muted);line-height:1.5}
+.play{font-size:11px;color:var(--red);font-weight:850}
+.related{grid-template-columns:repeat(5,1fr)}
+.rel{background:#faf7f4;border-radius:15px;padding:13px;text-align:center;font-size:12px;font-weight:750}
+.rel span{display:block;font-size:31px;margin-bottom:5px}
+.bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:25px}
+.bottom button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 15px}
+.modal{
+  position:fixed;inset:0;background:rgba(20,25,35,.55);display:none;place-items:center;
+  padding:20px;z-index:5
+}
+.modal.open{display:grid}
+.breath{
+  width:min(540px,100%);background:#fff;border-radius:26px;padding:25px;text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,.22)
+}
+.close{
+  float:right;border:0;background:#f3efec;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:20px
+}
+.breath h2{margin:12px 0 5px}.breath p{color:var(--muted);line-height:1.55}
+.visual{position:relative;width:220px;height:220px;margin:12px auto}
+.circle{
+  position:absolute;inset:20px;border-radius:50%;background:#fff0ec;
+  animation:pulse 8s ease-in-out infinite
+}
+.breathcat{
+  position:absolute;inset:0;display:grid;place-items:center;font-size:112px;
+  animation:breathe 8s ease-in-out infinite;transform-origin:center
+}
+.phase{font-size:22px;font-weight:900;color:var(--red);min-height:34px}
+.progress{height:8px;background:#f1ece8;border-radius:99px;overflow:hidden;margin:18px 0}
+.progress>div{height:100%;width:0;background:var(--red);transition:width .3s linear}
+.controls button{
+  border:0;background:var(--red);color:white;border-radius:12px;padding:11px 18px;cursor:pointer;margin:5px
+}
+.controls button.secondary{background:#eee8e4;color:var(--ink)}
+@keyframes breathe{0%,100%{transform:scale(.88)}50%{transform:scale(1.08)}}
+@keyframes pulse{0%,100%{transform:scale(.72);opacity:.45}50%{transform:scale(1.15);opacity:1}}
+@media(prefers-reduced-motion:reduce){.breathcat,.circle{animation:none}}
+@media(max-width:850px){
+  .app{margin:0;border-radius:0;grid-template-columns:1fr}
+  .app aside{border-right:0;border-bottom:1px solid var(--line)}
+  aside .label,aside .infoBtn,.quote{display:none}
+  .emotions{display:grid;grid-template-columns:repeat(3,1fr)}
+  .emotion{justify-content:center}.emotion .name{display:none}
+  main{padding:24px 18px}
+  .hero,.trio,.exercises{grid-template-columns:1fr}
+  .art{min-height:260px}
+  .related{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="brand">🐾 TUNNETYÖKORTIT</div>
+    <div class="tagline">Tunne, ymmärrä, toimi.</div>
+
+    <div class="label">PERUSTUNTEET</div>
+    <div class="emotions">
+      <button class="emotion"><span class="thumb joy">😸</span><span class="name">Ilo</span></button>
+      <button class="emotion"><span class="thumb sad">😿</span><span class="name">Suru</span></button>
+      <button class="emotion active"><span class="thumb anger">😾</span><span class="name">Viha</span></button>
+      <button class="emotion"><span class="thumb fear">🙀</span><span class="name">Pelko</span></button>
+      <button class="emotion"><span class="thumb surprise">😺</span><span class="name">Yllättyneisyys</span></button>
+      <button class="emotion"><span class="thumb disgust">😼</span><span class="name">Inho</span></button>
+    </div>
+
+    <div class="label">TIETOA KORTEISTA</div>
+    <button class="infoBtn">Mitä tunteet ovat?</button>
+    <button class="infoBtn">Näin käytät kortteja</button>
+    <button class="infoBtn">Tietoa hankkeesta</button>
+
+    <div class="quote">
+      <b>Kaikki tunteet ovat sallittuja.</b><br>
+      Sinä päätät, mitä niillä teet. 🐱
+    </div>
+  </aside>
+
+  <main>
+    <div class="top">
+      <span>← Takaisin tunteisiin</span>
+      <span>☆ Lisää suosikkeihin</span>
+    </div>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">PERUSTUNNE</div>
+        <h1>VIHA</h1>
+        <p class="lead">
+          Viha on voimakas tunne, joka kertoo usein siitä, että jokin tärkeä raja on ylittynyt,
+          jokin tuntuu epäreilulta tai tarvitset muutosta. Viha ei ole väärä tunne – ratkaisevaa
+          on, mitä sen kanssa teet.
+        </p>
+      </div>
+
+      <div class="art" aria-label="Vihainen Vohveli-kissa">
+        <span class="bolt b1">⚡</span>
+        <span class="cat">😾</span>
+        <span class="bolt b2">⚡</span>
+        <span class="caption">Vohveli-kuvitus korvataan omalla kuvalla</span>
+      </div>
+    </section>
+
+    <div class="message">
+      <div class="icon">⚡</div>
+      <div>
+        <b>Vihan viesti</b>
+        <p>“Jokin ei ole kohdallani hyvin. Tarvitsen muutosta, suojaa tai selkeämmän rajan.”</p>
+      </div>
+    </div>
+
+    <section class="trio">
+      <div class="smallcard">
+        <span class="ico">⚡</span>
+        <h3>Mitä viha voi kertoa?</h3>
+        <p>Sinua on kohdeltu epäreilusti, rajasi on ylitetty tai jokin tärkeä tarve ei ole tullut kuulluksi.</p>
+      </div>
+      <div class="smallcard">
+        <span class="ico">🌡️</span>
+        <h3>Miltä se voi tuntua kehossa?</h3>
+        <p>Sydän hakkaa, keho kuumenee, leuka tai kädet jännittyvät ja energia kasvaa nopeasti.</p>
+      </div>
+      <div class="smallcard">
+        <span class="ico">🧭</span>
+        <h3>Mitä voin tehdä?</h3>
+        <p>Ota ensin vähän tilaa tunteelle. Rauhoita kehoa ja päätä vasta sitten, mikä olisi turvallinen teko.</p>
+      </div>
+    </section>
+
+    <div class="sectionTitle">HARJOITUKSIA</div>
+    <section class="exercises">
+      <button class="exercise" id="breathOpen">
+        <span class="excat">🐱</span>
+        <b>PYSÄHDY &amp; HUOMAA</b>
+        <p>Hengitä Vohvelin kanssa rauhallisesti sisään ja ulos.</p>
+        <span class="play">▶ Avaa hengitysharjoitus</span>
+      </button>
+      <button class="exercise">
+        <span class="excat">😾</span>
+        <b>MISSÄ VIHA TUNTUU?</b>
+        <p>Huomaa missä kohtaa kehoa viha tuntuu kaikkein voimakkaimmin.</p>
+      </button>
+      <button class="exercise">
+        <span class="excat">🐈</span>
+        <b>PURA ENERGIAA TURVALLISESTI</b>
+        <p>Liiku, ravistele käsiä tai kävele hetki ennen kuin toimit.</p>
+      </button>
+    </section>
+
+    <div class="sectionTitle">VIHAAN VOI LIITTYÄ MYÖS</div>
+    <section class="related">
+      <div class="rel"><span>😾</span>Ärtymys</div>
+      <div class="rel"><span>🐈</span>Turhautuminen</div>
+      <div class="rel"><span>😼</span>Mustasukkaisuus</div>
+      <div class="rel"><span>🐱</span>Katkeruus</div>
+      <div class="rel"><span>🙈</span>Häpeä</div>
+    </section>
+
+    <div class="bottom">
+      <button>← Edellinen tunne</button>
+      <button>Seuraava tunne →</button>
+    </div>
+  </main>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="breathTitle">
+  <div class="breath">
+    <button class="close" id="close" aria-label="Sulje">×</button>
+    <h2 id="breathTitle">Hengitä Vohvelin kanssa</h2>
+    <p>
+      Anna kehon hidastua. Vihan ei tarvitse kadota – sille tehdään vähän enemmän tilaa.
+    </p>
+
+    <div class="visual">
+      <div class="circle"></div>
+      <div class="breathcat">🐱</div>
+    </div>
+
+    <div class="phase" id="phase">Hengitä sisään…</div>
+    <p id="guide">Nenän kautta rauhallisesti. Anna vatsan nousta.</p>
+
+    <div class="progress"><div id="bar"></div></div>
+
+    <div class="controls">
+      <button id="restart">Aloita alusta</button>
+      <button class="secondary" id="pause">Pysäytä</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const modal = document.getElementById('modal');
+const phase = document.getElementById('phase');
+const guide = document.getElementById('guide');
+const cat = document.querySelector('.breathcat');
+const circle = document.querySelector('.circle');
+const bar = document.getElementById('bar');
+
+let phaseTimer = null;
+let progressTimer = null;
+let paused = false;
+let step = 0;
+let elapsed = 0;
+const total = 32000;
+
+const phases = [
+  ['Hengitä sisään…','Nenän kautta rauhallisesti. Anna vatsan nousta.'],
+  ['Hengitä ulos…','Puhalla hitaasti ulos. Anna hartioiden laskea.']
+];
+
+function updatePhase(){
+  phase.textContent = phases[step % 2][0];
+  guide.textContent = phases[step % 2][1];
+  step++;
+}
+
+function start(){
+  clearInterval(phaseTimer);
+  clearInterval(progressTimer);
+  paused = false;
+  step = 0;
+  elapsed = 0;
+  bar.style.width = '0%';
+  document.getElementById('pause').textContent = 'Pysäytä';
+  cat.style.animationPlayState = 'running';
+  circle.style.animationPlayState = 'running';
+  updatePhase();
+  phaseTimer = setInterval(updatePhase, 4000);
+  progressTimer = setInterval(() => {
+    elapsed += 200;
+    bar.style.width = Math.min(100, elapsed / total * 100) + '%';
+    if(elapsed >= total){
+      clearInterval(phaseTimer);
+      clearInterval(progressTimer);
+      phase.textContent = 'Hyvä. Huomaa miltä kehossa tuntuu nyt.';
+      guide.textContent = 'Voit jatkaa vielä yhden kierroksen tai palata korttiin.';
+      bar.style.width = '100%';
+    }
+  }, 200);
+}
+
+document.getElementById('breathOpen').addEventListener('click', () => {
+  modal.classList.add('open');
+  start();
+});
+
+document.getElementById('close').addEventListener('click', () => {
+  modal.classList.remove('open');
+  clearInterval(phaseTimer);
+  clearInterval(progressTimer);
+});
+
+document.getElementById('restart').addEventListener('click', start);
+
+document.getElementById('pause').addEventListener('click', (e) => {
+  paused = !paused;
+  e.currentTarget.textContent = paused ? 'Jatka' : 'Pysäytä';
+  cat.style.animationPlayState = paused ? 'paused' : 'running';
+  circle.style.animationPlayState = paused ? 'paused' : 'running';
+
+  if(paused){
+    clearInterval(phaseTimer);
+    clearInterval(progressTimer);
+  } else {
+    phaseTimer = setInterval(updatePhase, 4000);
+    progressTimer = setInterval(() => {
+      elapsed += 200;
+      bar.style.width = Math.min(100, elapsed / total * 100) + '%';
+      if(elapsed >= total){
+        clearInterval(phaseTimer);
+        clearInterval(progressTimer);
+        phase.textContent = 'Hyvä. Huomaa miltä kehossa tuntuu nyt.';
+        guide.textContent = 'Voit jatkaa vielä yhden kierroksen tai palata korttiin.';
+        bar.style.width = '100%';
+      }
+    }, 200);
+  }
+});
+
+modal.addEventListener('click', (e) => {
+  if(e.target === modal){
+    modal.classList.remove('open');
+    clearInterval(phaseTimer);
+    clearInterval(progressTimer);
+  }
+});
+</script>
+</body>
+</html>
