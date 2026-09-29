@@ -1,0 +1,180 @@
+<!doctype html><html lang="fi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tunnetyökortit – Viha</title>
+<style>
+:root{--r:#ef1018;--n:#061650;--line:#eadfd9;--cream:#fff6ea}*{box-sizing:border-box}body{margin:0;background:#faf9f7;color:var(--n);font-family:Arial,Helvetica,sans-serif}.app{max-width:1280px;margin:auto;background:#fff;display:grid;grid-template-columns:275px 1fr;min-height:100vh}aside{padding:22px 16px;border-right:1px solid var(--line)}.brand{font-size:21px;font-weight:900}.tag{font-size:13px;margin:5px 0 35px}.sect{font-size:14px;font-weight:900;margin:18px 0 10px}.emo{height:82px;border-radius:14px;margin:8px 0;display:flex;align-items:center;gap:12px;padding:7px 10px;border:1px solid #ead9a4;font-weight:900;font-size:18px;overflow:hidden}.emo img{width:78px;height:70px;object-fit:contain}.emo span:last-child{margin-left:auto;font-size:31px}.ilo{background:#fff6db}.suru{background:#edf6ff;border-color:#bad8ff}.viha{background:var(--r);color:#fff}.pelko{background:#f3ebff;border-color:#d8c1ff}.yll{background:#fff6db}.inho{background:#eff8e8;border-color:#cfe2bd}.infobox{border:1px solid var(--line);border-radius:14px;overflow:hidden}.infobox div{padding:16px;border-bottom:1px solid var(--line);font-weight:700}.infobox div:last-child{border:0}.motto{margin-top:32px;background:var(--cream);border:1px solid #ffd5a6;border-radius:14px;padding:22px 18px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.55;font-weight:900;font-size:16px;min-height:118px}main{padding:25px 28px 80px}.top{display:flex;justify-content:space-between;color:var(--r);font-weight:800;margin-bottom:22px}.hero{border:1px solid var(--line);border-radius:20px;padding:26px;display:grid;grid-template-columns:43% 57%;min-height:500px}.eyebrow{font-weight:900;font-size:14px}.hero h1{font-size:76px;color:var(--r);margin:10px 0 28px}.hero p{font-size:18px;line-height:1.75;font-weight:650}.heroart img{width:100%;height:440px;object-fit:contain}.msg{background:#fff0ee;border-radius:16px;padding:20px;margin-top:26px}.msg b{font-size:20px;color:var(--r)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}.card{border:1px solid var(--line);border-radius:16px;padding:18px;min-height:245px}.card h3{font-size:15px;color:var(--r)}.card li{margin:12px 0;line-height:1.4}.title{font-weight:900;margin:25px 0 10px}.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--r);color:#fff;margin-right:8px}.ex{min-height:330px}.eximg{width:100%;height:135px;object-fit:contain;margin-top:8px}.start{background:#ffe2df;border-radius:12px;padding:10px;display:flex;align-items:center;gap:10px;cursor:pointer;margin-top:12px}.start img{width:92px;height:100px;object-fit:contain}.play{margin-left:auto;border:0;border-radius:50%;background:var(--r);color:#fff;width:45px;height:45px;font-size:20px}.related{display:flex;gap:10px;overflow:auto}.rel{min-width:130px;background:#fff4df;border:1px solid #f0d9a8;border-radius:10px;padding:10px;text-align:center;font-size:12px;font-weight:800}.nav{display:flex;justify-content:space-between;margin-top:14px}.nav button{padding:10px 15px;border-radius:10px;border:1px solid #b8d0ff;background:#fff;color:#1751c7}.nav .next{background:var(--r);color:#fff;border-color:var(--r)}
+.modalback{display:none;position:fixed;inset:0;background:#0002;z-index:20;align-items:center;justify-content:center;padding:15px}.modalback.open{display:flex}.modal{width:min(520px,95vw);background:#fff;border-radius:24px;padding:25px;box-shadow:0 20px 55px #0003;position:relative}.close{position:absolute;right:17px;top:12px;border:0;background:none;font-size:31px;color:var(--n);cursor:pointer}.modal h2{text-align:center;font-size:18px;margin:5px 0}.sub{text-align:center;font-weight:800}.breathzone{height:290px;position:relative;display:flex;align-items:center;justify-content:center}.circle{position:absolute;left:50%;top:50%;width:220px;height:220px;margin-left:-110px;margin-top:-110px;border-radius:50%;background:#ffd9dc;transform:scale(.62);transform-origin:50% 50%;opacity:.64;box-shadow:0 0 0 15px #ffecee88;will-change:transform,opacity}.breathcat{position:absolute;z-index:2;left:50%;top:50%;width:225px;height:225px;object-fit:contain;transform:translate(-50%,-50%)}.breathstatus{text-align:center;min-height:52px;display:flex;align-items:center;justify-content:center}.phase{font-size:22px;font-weight:900;color:var(--r);transition:opacity .35s ease,color .35s ease}.phase.pause{opacity:.58}.round{text-align:center;font-weight:900;margin-top:6px}.dots{text-align:center;font-size:22px;letter-spacing:7px;color:#ddd;margin:5px}.dots .on{color:var(--r)}.controls{display:flex;justify-content:center;gap:16px;margin-top:12px}.controls{flex-wrap:wrap}.controls button{border:1px solid var(--line);background:#fff;border-radius:24px;padding:12px 20px;color:var(--n);font-weight:800}.done{display:none;text-align:center;margin:16px auto 4px;color:var(--n);line-height:1.45}.done strong{display:block;font-size:21px}.done em{display:block;font-size:15px;font-weight:500;margin-top:4px}.done.show{display:block}.bottom{position:fixed;bottom:0;left:0;right:0;height:60px;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;gap:85px;align-items:center;font-size:12px;z-index:5;text-align:center}
+@media(max-width:850px){.app{grid-template-columns:1fr}aside{display:none}main{padding:16px 13px 75px}.hero{grid-template-columns:1fr}.hero h1{font-size:58px}.heroart img{height:330px}.grid{grid-template-columns:1fr}.bottom{gap:25px}}
+</style><style id="v19">
+
+[data-emotion-nav].selected{outline:3px solid var(--fixed);outline-offset:2px;box-shadow:0 4px 12px rgba(30,40,60,.12)}
+</style>
+
+
+<style id="v24-illustrated-page">
+:root{--e:#ef1018;--e2:#ff8b78;--pale:#fff0f1;--wash:rgba(239,16,24,.10)}
+body{background:linear-gradient(180deg,#fff 0%,var(--pale) 150%);transition:.3s}
+main{position:relative;isolation:isolate}
+main::before{content:"";position:absolute;z-index:-2;inset:-40px -50px;background:
+radial-gradient(ellipse at 91% 11%,var(--wash) 0 7%,transparent 22%),
+radial-gradient(ellipse at 6% 43%,var(--wash) 0 8%,transparent 24%),
+radial-gradient(ellipse at 88% 77%,var(--wash) 0 8%,transparent 24%);pointer-events:none}
+.paint{position:absolute;z-index:-1;pointer-events:none;opacity:.24;border-radius:48% 52% 44% 56%/55% 42% 58% 45%;background:var(--e);filter:blur(.2px)}
+.paint.p1{width:310px;height:105px;right:-35px;top:170px;transform:rotate(-8deg)}
+.paint.p2{width:220px;height:75px;left:-55px;top:620px;transform:rotate(13deg);opacity:.15}
+.paint.p3{width:260px;height:85px;right:-60px;bottom:170px;transform:rotate(-14deg);opacity:.13}
+.scatter{position:absolute;pointer-events:none;z-index:1;color:var(--e);font-weight:900;opacity:.38;letter-spacing:12px;font-size:31px;white-space:nowrap}
+.scatter.s1{right:2%;top:95px}.scatter.s2{left:2%;top:520px;transform:rotate(-12deg);opacity:.22}
+.heroart,.hero{position:relative;overflow:hidden!important;background:linear-gradient(135deg,#fff 0%,var(--pale) 100%)!important;border:1px solid color-mix(in srgb,var(--e) 22%,white)!important;box-shadow:0 15px 35px var(--wash)!important}
+.heroart::before,.hero::before{content:"";position:absolute;width:360px;height:220px;right:-80px;bottom:-80px;background:radial-gradient(ellipse,var(--wash),transparent 68%);transform:rotate(-12deg)}
+.heroart img,.hero img{width:46%!important;max-width:520px!important;height:390px!important;object-fit:contain!important;position:relative;z-index:2}
+h1,.eyebrow,.bigmsg,.heroart h2,.hero h2,.exerciseTitle{color:var(--e)!important}
+.info,.card,.exercise,.ex{position:relative;border-top:4px solid var(--e)!important;box-shadow:0 8px 24px var(--wash)!important;background:rgba(255,255,255,.94)!important}
+.info::before,.card::before,.exercise::before,.ex::before{content:"";position:absolute;width:42px;height:8px;border-radius:20px;background:var(--e2);opacity:.26;right:18px;top:16px;transform:rotate(-9deg)}
+.info h3,.card h3,.exercise h3,.ex h3{color:var(--e)!important}.num{background:var(--e)!important;color:white!important}.start{background:var(--e)!important;border-color:var(--e)!important}
+</style><style id="v25-hero-emotion-art">
+.heroart{min-height:440px;display:grid;place-items:center;position:relative;isolation:isolate}
+.heroart img{z-index:3!important;width:88%!important;max-width:560px!important;height:420px!important;filter:drop-shadow(0 12px 10px rgba(20,30,50,.10))}
+.hero-deco{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;border-radius:18px}
+.hero-blob{position:absolute;background:var(--e);opacity:.16;filter:blur(.2px);border-radius:55% 45% 62% 38%/46% 58% 42% 54%}
+.hero-blob.b1{width:72%;height:43%;right:-7%;top:12%;transform:rotate(-10deg)}
+.hero-blob.b2{width:52%;height:27%;left:7%;bottom:7%;transform:rotate(13deg);opacity:.10;background:var(--e2)}
+.hero-blob.b3{width:30%;height:22%;right:8%;bottom:5%;transform:rotate(-18deg);opacity:.12}
+.hero-mark{position:absolute;color:var(--e);font-weight:900;line-height:1;z-index:2;text-shadow:0 2px 0 rgba(255,255,255,.55)}
+.hero-mark.m1{right:8%;top:8%;font-size:48px;transform:rotate(12deg)}
+.hero-mark.m2{right:30%;top:18%;font-size:30px;transform:rotate(-15deg);opacity:.75}
+.hero-mark.m3{left:9%;bottom:14%;font-size:42px;transform:rotate(-10deg);opacity:.75}
+.hero-mark.m4{right:10%;bottom:12%;font-size:34px;transform:rotate(16deg);opacity:.68}
+.hero-mark.m5{left:16%;top:12%;font-size:24px;opacity:.55}
+.hero-splash{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--e);opacity:.25;z-index:1;box-shadow:24px 18px 0 -3px var(--e),-18px 30px 0 -4px var(--e2),38px 45px 0 -5px var(--e)}
+.hero-splash.sp1{right:20%;top:7%}.hero-splash.sp2{left:16%;bottom:24%;transform:scale(.8)}
+@media(max-width:850px){.heroart{min-height:340px}.heroart img{height:325px!important;width:92%!important}.hero-mark.m1{font-size:38px}}
+</style><style id="v26-burst-outside">
+/* Let the illustration breathe outside its old rectangular aquarium. */
+.hero{overflow:visible!important;isolation:visible!important;position:relative}
+.heroart{overflow:visible!important;isolation:visible!important;z-index:3}
+.hero-deco{inset:-90px -95px -85px -80px!important;overflow:visible!important;border-radius:0!important;z-index:1!important}
+.heroart img{position:relative;z-index:4!important;filter:drop-shadow(0 14px 12px rgba(20,30,50,.11))}
+.hero-blob.b1{width:88%!important;height:52%!important;right:-18%!important;top:3%!important;opacity:.18!important}
+.hero-blob.b2{width:68%!important;height:34%!important;left:-18%!important;bottom:-4%!important;opacity:.12!important}
+.hero-blob.b3{width:44%!important;height:30%!important;right:-10%!important;bottom:-13%!important;opacity:.14!important}
+.hero-mark.m1{right:-2%!important;top:0!important;font-size:58px!important}
+.hero-mark.m2{right:25%!important;top:-8%!important;font-size:38px!important}
+.hero-mark.m3{left:-3%!important;bottom:4%!important;font-size:52px!important}
+.hero-mark.m4{right:1%!important;bottom:-5%!important;font-size:44px!important}
+.hero-mark.m5{left:8%!important;top:1%!important;font-size:32px!important}
+.hero-splash.sp1{right:10%!important;top:-3%!important;transform:scale(1.35)}
+.hero-splash.sp2{left:-1%!important;bottom:17%!important;transform:scale(1.15)!important}
+/* A few matching accents escape into the surrounding page, without a stripe. */
+.hero::after{content:var(--v26-symbols,"♥ ✦ ♥");position:absolute;right:-18px;bottom:-42px;color:var(--e);font-size:27px;font-weight:900;letter-spacing:13px;opacity:.24;transform:rotate(-8deg);pointer-events:none;z-index:5}
+.hero::before{width:470px!important;height:280px!important;right:-150px!important;bottom:-125px!important;opacity:.9}
+@media(max-width:850px){
+ .hero-deco{inset:-55px -28px -55px -28px!important}
+ .hero-mark.m1{right:0!important}.hero-mark.m3{left:0!important}
+ .hero::after{right:2px;bottom:-34px;font-size:21px}
+}
+</style></head><body><div class="app"><aside>
+<div class="brand">🐾 &nbsp; TUNNETYÖKORTIT</div><div class="tag">Tunne, ymmärrä, toimi.</div><div class="sect">PERUSTUNTEET</div>
+<div class="emo ilo"><img src="assets/emotion-ilo-v24.png">Ilo</div><div class="emo suru"><img src="assets/emotion-suru-v24.png">Suru</div><div class="emo viha"><img src="assets/vohveli-viha-thumb.png">Viha</div><div class="emo pelko"><img src="assets/emotion-pelko-v24.png">Pelko</div><div class="emo yll"><img src="assets/emotion-yllatys-v24.png">Yllättyneisyys</div><div class="emo inho"><img src="assets/emotion-inho-v24.png">Inho</div>
+<div class="sect">TIETOA KORTEISTA</div><div class="infobox"><div>ⓘ &nbsp; Mitä tunteet ovat?</div><div>▢ &nbsp; Näin käytät kortteja</div><div>♡ &nbsp; Tietoa hankkeesta</div></div><div class="motto">Kaikki tunteet ovat sallittuja.<br>Sinä päätät, mitä niillä teet.</div></aside>
+<main id="emotionMain"></main></div>
+<div class="bottom"><span>⌂<br>Etusivu</span><span>♡<br>Suosikit</span><span>♨<br>Hengitysharjoitus</span><span>ⓘ<br>Tietoa</span><span>⚙<br>Asetukset</span></div>
+<div class="modalback" id="modal"><div class="modal">
+<button class="close" id="close">×</button>
+<h2>PYSÄHDY &amp; HUOMAA</h2><div class="sub">Hengitä Vohvelin kanssa</div>
+<div class="breathzone"><div class="circle" id="circle"></div><img class="breathcat" src="assets/vohveli-hengitys.png" alt="Rauhallinen Vohveli"></div>
+<div class="breathstatus"><div class="phase" id="phase">Valmistaudu rauhassa</div></div>
+<div class="round" id="round">Kierros 1 / 5</div><div class="dots" id="dots"></div>
+<div class="done" id="done"><strong>Harjoitus valmis 💛</strong><em>Huomaa hetki, miltä kehossasi tuntuu nyt.</em></div>
+<div class="controls"><button id="audio">🔊 &nbsp; Oma ääni päällä</button><button id="pause">Ⅱ &nbsp; Pysäytä</button><button id="restart">↻ &nbsp; Aloita alusta</button></div>
+</div></div>
+<script>
+
+function decorateHero(key){
+ const A={
+  ilo:["♥","♥","✦","♥","✦"],
+  suru:["💧","•","💧","•","💧"],
+  viha:["ϟ","ϟ","ϟ","ϟ","•"],
+  pelko:["⌁","!","⌁","!","⌁"],
+  yllatys:["!","✦","!","✦","!"],
+  inho:["≈","≋","≈","~","≋"]
+ }[key]||["✦","✦","✦","✦","✦"];
+ const h=document.querySelector('.heroart'); if(!h)return;
+ const d=document.createElement('div');d.className='hero-deco';
+ d.innerHTML='<i class="hero-blob b1"></i><i class="hero-blob b2"></i><i class="hero-blob b3"></i><i class="hero-splash sp1"></i><i class="hero-splash sp2"></i>'+A.map((x,i)=>`<b class="hero-mark m${i+1}">${x}</b>`).join('');
+ h.prepend(d);
+}
+
+
+function applyV24Theme(key){
+ const T={
+  ilo:{e:"#dfa400",e2:"#ffd55b",p:"#fff8dc",w:"rgba(223,164,0,.12)",sym:"♥  ✦  ♥  ✦"},
+  suru:{e:"#3976c5",e2:"#8ec8ff",p:"#edf6ff",w:"rgba(57,118,197,.11)",sym:"●  ·  ●  ·"},
+  viha:{e:"#ef1018",e2:"#ff806f",p:"#fff0f1",w:"rgba(239,16,24,.11)",sym:"ϟ  ϟ  ϟ"},
+  pelko:{e:"#7655a6",e2:"#b99be5",p:"#f5efff",w:"rgba(118,85,166,.11)",sym:"⌁  !  ⌁"},
+  yllatys:{e:"#d67a22",e2:"#ffb45d",p:"#fff3e5",w:"rgba(214,122,34,.11)",sym:"!  ✦  !  ✦"},
+  inho:{e:"#638d49",e2:"#a5c97f",p:"#f0f8e9",w:"rgba(99,141,73,.12)",sym:"≈  ≋  ≈"}
+ }[key]||null;if(!T)return;
+ const r=document.documentElement;r.style.setProperty("--e",T.e);r.style.setProperty("--e2",T.e2);r.style.setProperty("--pale",T.p);r.style.setProperty("--wash",T.w);r.style.setProperty("--v26-symbols",JSON.stringify(T.sym));
+ document.querySelectorAll(".paint,.scatter").forEach(x=>x.remove());
+ const main=document.querySelector("main"); if(main){
+  ["p1","p2","p3"].forEach(c=>{let x=document.createElement("span");x.className="paint "+c;main.appendChild(x)});
+  ["s1","s2"].forEach(c=>{let x=document.createElement("span");x.className="scatter "+c;x.textContent=T.sym;main.appendChild(x)});
+ }
+}
+
+
+function applyEmotionAtmosphere(key){
+ const themes={
+  ilo:{c:"#d9a000",c2:"#ffd75a",soft:"#fff9df",wash:"rgba(217,160,0,.12)",line:"rgba(217,160,0,.25)",sym:"♥  ✦  ♥"},
+  suru:{c:"#3976c5",c2:"#8fc7ff",soft:"#eef6ff",wash:"rgba(57,118,197,.11)",line:"rgba(57,118,197,.23)",sym:"●  ˙  ●"},
+  viha:{c:"#ef1018",c2:"#ff766c",soft:"#fff0f1",wash:"rgba(239,16,24,.10)",line:"rgba(239,16,24,.23)",sym:"ϟ  ϟ  ϟ"},
+  pelko:{c:"#7655a6",c2:"#b99be4",soft:"#f6f0ff",wash:"rgba(118,85,166,.11)",line:"rgba(118,85,166,.23)",sym:"⌁  !  ⌁"},
+  yllatys:{c:"#d67a22",c2:"#ffba69",soft:"#fff4e8",wash:"rgba(214,122,34,.11)",line:"rgba(214,122,34,.23)",sym:"!  ✦  !"},
+  inho:{c:"#638d49",c2:"#9fc879",soft:"#f1f8ea",wash:"rgba(99,141,73,.12)",line:"rgba(99,141,73,.25)",sym:"≈  ≋  ≈"}
+ };
+ const t=themes[key]||themes.viha, r=document.documentElement;
+ r.style.setProperty("--emo",t.c);r.style.setProperty("--emo2",t.c2);
+ r.style.setProperty("--emoSoft",t.soft);r.style.setProperty("--emoWash",t.wash);
+ r.style.setProperty("--emoLine",t.line);r.style.setProperty("--emotion-symbols",JSON.stringify(t.sym));
+ let a=document.querySelector(".emotion-accent");if(!a){a=document.createElement("div");a.className="emotion-accent";document.body.appendChild(a)}
+ a.textContent=t.sym;
+}
+
+const CARDS={"ilo": {"label": "ILO", "color": "#d9a000", "soft": "#fff8dc", "image": "assets/emotion-ilo-v24.png", "message": "Ilon viesti", "lead": "Jotain hyvää tapahtuu juuri nyt.", "desc": "Ilo kertoo asioista, jotka tuntuvat hyvältä, tärkeältä tai merkitykselliseltä. Se voi syntyä pienestäkin onnistumisesta tai mukavasta hetkestä.", "body": ["Kasvot rentoutuvat ja hymy nousee helposti.", "Kehossa voi tuntua keveyttä, lämpöä tai energiaa.", "Tekee mieli nauraa, liikkua tai jakaa hetki jonkun kanssa."], "purpose": "Ilo vahvistaa hyvinvointia ja yhteyttä toisiin sekä auttaa huomaamaan elämässä olevia hyviä asioita.", "ex": [["HUOMAA ILO", "Mikä tässä hetkessä tuntuu hyvältä? Pysähdy hetkeksi huomaamaan tunne kehossasi."], ["ANNA ILON NÄKYÄ", "Hymyile, liiku, naura tai tee jotain pientä, joka antaa ilolle tilaa."], ["JAA ILO", "Kerro yhdelle ihmiselle jotain hyvää, joka tapahtui tai mistä olet juuri nyt iloinen."]]}, "suru": {"label": "SURU", "color": "#3976c5", "soft": "#edf5ff", "image": "assets/emotion-suru-v24.png", "message": "Surun viesti", "lead": "Jokin tärkeä on muuttunut tai menetetty.", "desc": "Suru voi syntyä menetyksestä, pettymyksestä, ikävästä tai yksinäisyydestä. Se kertoo usein siitä, että jokin tai joku on meille tärkeä.", "body": ["Kehossa voi tuntua raskaalta tai väsyneeltä.", "Kurkussa voi olla pala ja silmiin nousta kyyneleitä.", "Tekee mieli vetäytyä, olla hiljaa tai hakea läheisyyttä."], "purpose": "Suru auttaa pysähtymään menetyksen äärelle, hakemaan lohtua ja vähitellen sopeutumaan muutokseen.", "ex": [["HUOMAA SURU", "Mitä kaipaat tai mikä tuntuu juuri nyt raskaalta? Anna tunteen olla hetken ilman kiirettä."], ["HAE LOHTUA", "Hae turvaa ihmisestä, rauhallisesta paikasta, musiikista tai jostain sinulle tärkeästä."], ["KERRO TAI KIRJOITA", "Kerro tai kirjoita yhdestä asiasta, jota kaipaat. Mieti, mikä voisi tuoda tähän hetkeen vähän lohtua."]]}, "viha": {"label": "VIHA", "color": "#ef1018", "soft": "#fff0f1", "image": "assets/emotion-viha-v24.png", "message": "Vihan viesti", "lead": "Jokin ei tunnu oikealta.", "desc": "Viha voi kertoa, että rajasi on ylitetty, sinua on kohdeltu epäreilusti tai jokin tärkeä asia on uhattuna.", "body": ["Sydän hakkaa tai hengitys kiihtyy.", "Leuka, nyrkit tai hartiat jännittyvät.", "Kehossa tuntuu kuumuutta tai levottomuutta."], "purpose": "Viha antaa energiaa puolustaa itseäsi, pitää kiinni rajoistasi ja yrittää muuttaa asioita.", "ex": [["PYSÄHDY & HUOMAA", "Missä kohtaa kehoa viha tuntuu juuri nyt? Nimeä tunne: “Minua vihastuttaa.”"], ["ANNA TILAA", "Ota pieni etäisyys tilanteeseen. Hengitä rauhallisesti Vohvelin kanssa."], ["TOIMI VIISAASTI", "Kun olo tasaantuu, kerro mitä tarvitset tai missä rajasi kulkee."]]}, "pelko": {"label": "PELKO", "color": "#7655a6", "soft": "#f5efff", "image": "assets/emotion-pelko-v24.png", "message": "Pelon viesti", "lead": "Jokin saattaa olla vaarallista tai epävarmaa.", "desc": "Pelko valmistaa meitä suojelemaan itseämme. Joskus vaara on todellinen, joskus keho hälyttää myös silloin, kun tilanne vain tuntuu epävarmalta.", "body": ["Sydän hakkaa ja hengitys voi muuttua nopeaksi.", "Vatsa voi tuntua oudolta ja lihakset jännittyä.", "Tekee mieli paeta, piiloutua, jähmettyä tai hakea turvaa."], "purpose": "Pelko auttaa huomaamaan vaaroja, olemaan varovainen ja etsimään turvaa silloin, kun sitä tarvitsemme.", "ex": [["KATSO YMPÄRILLESI", "Nimeä kolme asiaa, jotka näet. Huomaa, missä olet juuri nyt."], ["RAUHOITA KEHOA", "Paina jalkasi lattiaan ja hengitä hitaasti ulos. Anna hartioiden laskea."], ["HAE TURVAA", "Mene turvallisen ihmisen luo tai sano: “Minua pelottaa ja tarvitsen tukea.”"]]}, "yllatys": {"label": "YLLÄTTYNEISYYS", "color": "#d67a22", "soft": "#fff4e8", "image": "assets/emotion-yllatys-v24.png", "message": "Yllättyneisyyden viesti", "lead": "Jotain odottamatonta tapahtui.", "desc": "Yllättyneisyys pysäyttää huomion nopeasti uuden asian äärelle. Se voi muuttua hetkessä iloksi, peloksi, vihaksi tai joksikin muuksi tunteeksi.", "body": ["Silmät avautuvat ja huomio terävöityy.", "Hengitys voi hetkeksi pysähtyä tai muuttua.", "Kehossa voi tuntua säpsähdys tai nopea energian nousu."], "purpose": "Yllättyneisyys auttaa suuntaamaan huomion nopeasti muutokseen ja selvittämään, mitä ympärillä tapahtuu.", "ex": [["PYSÄHDY", "Anna itsellesi hetki. Mitä juuri tapahtui ja mikä siinä yllätti?"], ["TARKISTA TILANNE", "Katso ympärillesi rauhassa. Tarvitseeko tilanteeseen reagoida vai voitko vain huomata sen?"], ["NIMEÄ SEURAAVA TUNNE", "Muuttuiko yllätys iloksi, peloksi, vihaksi, uteliaisuudeksi vai joksikin muuksi?"]]}, "inho": {"label": "INHO", "color": "#638d49", "soft": "#f1f8ea", "image": "assets/emotion-inho-v24.png", "message": "Inhon viesti", "lead": "Haluan ottaa tästä etäisyyttä.", "desc": "Inho voi suojata meitä esimerkiksi pilaantuneelta ruoalta, epämiellyttäviltä asioilta tai tilanteilta, jotka rikkovat omia rajojamme.", "body": ["Kasvot vetäytyvät tai nenä menee ryppyyn.", "Vatsassa voi muljahtaa tai tulla etova olo.", "Tekee mieli kääntyä pois, perääntyä tai työntää asia kauemmas."], "purpose": "Inho auttaa välttämään mahdollisesti haitallisia asioita ja tunnistamaan omia rajoja.", "ex": [["HUOMAA REAKTIO", "Mihin kehosi reagoi? Huomaa inho ilman, että sinun tarvitsee heti toimia."], ["OTA ETÄISYYTTÄ", "Jos voit, siirry hieman kauemmas siitä, mikä tuntuu epämiellyttävältä."], ["TARKISTA RAJASI", "Onko asia vain epämiellyttävä vai kertooko tunne, että sinun täytyy sanoa ei tai suojata rajojasi?"]]}};
+const NAV={"ilo":"ilo","suru":"suru","viha":"viha","pelko":"pelko","yllättyneisyys":"yllatys","inho":"inho"};
+const FIXED={ilo:"#d9a000",suru:"#3976c5",viha:"#ef1018",pelko:"#7655a6",yllatys:"#d67a22",inho:"#638d49"};
+const modal=document.getElementById("modal"),circle=document.getElementById("circle"),phaseEl=document.getElementById("phase"),roundEl=document.getElementById("round"),dots=document.getElementById("dots"),pauseBtn=document.getElementById("pause"),doneEl=document.getElementById("done");
+let phase="in",round=1,paused=false,finished=false,timer=null;
+const clips={intro:new Audio("audio/intro.m4a"),inhale:new Audio("audio/inhale.m4a"),exhale:new Audio("audio/exhale.m4a"),outro:new Audio("audio/outro.m4a")};
+function stopAudio(){Object.values(clips).forEach(a=>{a.pause();a.currentTime=0})}
+function playClip(n){stopAudio();clips[n].play().catch(()=>{})}
+function dotsDraw(){dots.innerHTML=[1,2,3,4,5].map(n=>`<span class="${n<=round?"on":""}">●</span>`).join(" ")}
+function breathDraw(){phaseEl.textContent=phase==="in"?"Hengitä sisään":"Hengitä ulos";roundEl.textContent=`Kierros ${round} / 5`;dotsDraw();circle.style.transition=`transform ${phase==="in"?4:6}s ease-in-out`;circle.style.transform=phase==="in"?"scale(1.12)":"scale(.68)"}
+function schedule(){clearTimeout(timer);if(paused||finished)return;const ms=phase==="in"?4500:6500;timer=setTimeout(()=>{if(phase==="in"){phase="out";playClip("exhale");breathDraw()}else if(round===5){finished=true;stopAudio();playClip("outro");phaseEl.textContent="Harjoitus valmis 💛";roundEl.textContent="Huomaa hetki, miltä kehossasi tuntuu nyt.";doneEl.classList.add("show");circle.style.transform="scale(.78)";return}else{round++;phase="in";playClip("inhale");breathDraw()}schedule()},ms)}
+function reset(){clearTimeout(timer);stopAudio();phase="in";round=1;paused=false;finished=false;doneEl.classList.remove("show");pauseBtn.textContent="Ⅱ   Pysäytä";circle.style.transition="none";circle.style.transform="scale(.68)";setTimeout(()=>{playClip("intro");breathDraw();schedule()},100)}
+function render(key){
+ applyV24Theme(key);
+ const d=CARDS[key]||CARDS.viha; document.documentElement.style.setProperty("--r",d.color);
+ const body=d.body;
+ document.getElementById("emotionMain").innerHTML=`
+ <div class="top"><span>← Takaisin tunteisiin</span><span>☆ Lisää suosikkeihin</span></div>
+ <section class="hero"><div><div class="eyebrow">PERUSTUNNE</div><h1>${d.label}</h1><p>${d.desc}</p>
+ <div class="msg"><b>${d.message}</b><p>“${d.lead}”</p></div></div>
+ <div class="heroart"><img src="${d.image}" alt="Vohveli ja ${d.label.toLowerCase()}"></div></section>
+ <div class="grid">
+ <div class="card"><h3>MITÄ ${d.label} VOI KERTOA?</h3><ul><li>${d.lead}</li><li>${d.desc}</li></ul></div>
+ <div class="card"><h3>KEHOSSA VOI TUNTUA</h3><ul>${body.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+ <div class="card"><h3>MITÄ VOIN TEHDÄ?</h3><p>${d.purpose}</p></div></div>
+ <div class="title">HARJOITUKSIA</div><div class="grid">
+ ${d.ex.map((x,i)=>`<div class="card ex"><h3><span class="num">${i+1}</span>${x[0]}</h3><p>${x[1]}</p>${key==='viha'&&i===0?'<div class="start" id="open"><img src="assets/vohveli-harjoitus1.png"><div><b>Aloita harjoitus</b><br><small>Hengitä Vohvelin kanssa</small></div><button class="play">▶</button></div>':''}</div>`).join("")}</div>`;
+ decorateHero(key);
+ const op=document.getElementById("open");if(op)op.onclick=()=>{modal.classList.add("open");reset()};
+ document.querySelectorAll("[data-emotion-nav]").forEach(e=>e.classList.toggle("selected",e.dataset.emotionNav===key));location.hash=key;
+}
+document.querySelectorAll("aside *").forEach(e=>{const t=(e.textContent||"").trim().toLowerCase();if(NAV[t]){const k=NAV[t];e.dataset.emotionNav=k;e.style.setProperty("--fixed",FIXED[k]);e.style.setProperty("--r",FIXED[k],"important");e.style.cursor="pointer";e.onclick=()=>render(k)}if(t==="häpeä")e.remove()});
+document.getElementById("close").onclick=()=>{modal.classList.remove("open");clearTimeout(timer);stopAudio()};
+modal.onclick=e=>{if(e.target===modal){modal.classList.remove("open");clearTimeout(timer);stopAudio()}};
+pauseBtn.onclick=()=>{if(finished)return;paused=!paused;pauseBtn.textContent=paused?"▶   Jatka":"Ⅱ   Pysäytä";if(paused){clearTimeout(timer);stopAudio()}else{playClip(phase==="in"?"inhale":"exhale");breathDraw();schedule()}};
+document.getElementById("restart").onclick=reset;
+render((location.hash||"#viha").slice(1));
+if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+</script></body></html>
