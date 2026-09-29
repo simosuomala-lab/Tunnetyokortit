@@ -1,0 +1,164 @@
+<!doctype html><html lang="fi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tunnetyökortit – Viha</title>
+<style>
+:root{--r:#ef1018;--n:#061650;--line:#eadfd9;--cream:#fff6ea}*{box-sizing:border-box}body{margin:0;background:#faf9f7;color:var(--n);font-family:Arial,Helvetica,sans-serif}.app{max-width:1280px;margin:auto;background:#fff;display:grid;grid-template-columns:275px 1fr;min-height:100vh}aside{padding:22px 16px;border-right:1px solid var(--line)}.brand{font-size:21px;font-weight:900}.tag{font-size:13px;margin:5px 0 35px}.sect{font-size:14px;font-weight:900;margin:18px 0 10px}.emo{height:82px;border-radius:14px;margin:8px 0;display:flex;align-items:center;gap:12px;padding:7px 10px;border:1px solid #ead9a4;font-weight:900;font-size:18px;overflow:hidden}.emo img{width:78px;height:70px;object-fit:contain}.emo span:last-child{margin-left:auto;font-size:31px}.ilo{background:#fff6db}.suru{background:#edf6ff;border-color:#bad8ff}.viha{background:var(--r);color:#fff}.pelko{background:#f3ebff;border-color:#d8c1ff}.yll{background:#fff6db}.inho{background:#eff8e8;border-color:#cfe2bd}.infobox{border:1px solid var(--line);border-radius:14px;overflow:hidden}.infobox div{padding:16px;border-bottom:1px solid var(--line);font-weight:700}.infobox div:last-child{border:0}.motto{margin-top:32px;background:var(--cream);border:1px solid #ffd5a6;border-radius:14px;padding:22px 18px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.55;font-weight:900;font-size:16px;min-height:118px}main{padding:25px 28px 80px}.top{display:flex;justify-content:space-between;color:var(--r);font-weight:800;margin-bottom:22px}.hero{border:1px solid var(--line);border-radius:20px;padding:26px;display:grid;grid-template-columns:43% 57%;min-height:500px}.eyebrow{font-weight:900;font-size:14px}.hero h1{font-size:76px;color:var(--r);margin:10px 0 28px}.hero p{font-size:18px;line-height:1.75;font-weight:650}.heroart img{width:100%;height:440px;object-fit:contain}.msg{background:#fff0ee;border-radius:16px;padding:20px;margin-top:26px}.msg b{font-size:20px;color:var(--r)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}.card{border:1px solid var(--line);border-radius:16px;padding:18px;min-height:245px}.card h3{font-size:15px;color:var(--r)}.card li{margin:12px 0;line-height:1.4}.title{font-weight:900;margin:25px 0 10px}.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--r);color:#fff;margin-right:8px}.ex{min-height:330px}.eximg{width:100%;height:135px;object-fit:contain;margin-top:8px}.start{background:#ffe2df;border-radius:12px;padding:10px;display:flex;align-items:center;gap:10px;cursor:pointer;margin-top:12px}.start img{width:92px;height:100px;object-fit:contain}.play{margin-left:auto;border:0;border-radius:50%;background:var(--r);color:#fff;width:45px;height:45px;font-size:20px}.related{display:flex;gap:10px;overflow:auto}.rel{min-width:130px;background:#fff4df;border:1px solid #f0d9a8;border-radius:10px;padding:10px;text-align:center;font-size:12px;font-weight:800}.nav{display:flex;justify-content:space-between;margin-top:14px}.nav button{padding:10px 15px;border-radius:10px;border:1px solid #b8d0ff;background:#fff;color:#1751c7}.nav .next{background:var(--r);color:#fff;border-color:var(--r)}
+.modalback{display:none;position:fixed;inset:0;background:#0002;z-index:20;align-items:center;justify-content:center;padding:15px}.modalback.open{display:flex}.modal{width:min(520px,95vw);background:#fff;border-radius:24px;padding:25px;box-shadow:0 20px 55px #0003;position:relative}.close{position:absolute;right:17px;top:12px;border:0;background:none;font-size:31px;color:var(--n);cursor:pointer}.modal h2{text-align:center;font-size:18px;margin:5px 0}.sub{text-align:center;font-weight:800}.breathzone{height:290px;position:relative;display:flex;align-items:center;justify-content:center}.circle{position:absolute;left:50%;top:50%;width:220px;height:220px;margin-left:-110px;margin-top:-110px;border-radius:50%;background:#ffd9dc;transform:scale(.62);transform-origin:50% 50%;opacity:.64;box-shadow:0 0 0 15px #ffecee88;will-change:transform,opacity}.breathcat{position:absolute;z-index:2;left:50%;top:50%;width:225px;height:225px;object-fit:contain;transform:translate(-50%,-50%)}.breathstatus{text-align:center;min-height:52px;display:flex;align-items:center;justify-content:center}.phase{font-size:22px;font-weight:900;color:var(--r);transition:opacity .35s ease,color .35s ease}.phase.pause{opacity:.58}.round{text-align:center;font-weight:900;margin-top:6px}.dots{text-align:center;font-size:22px;letter-spacing:7px;color:#ddd;margin:5px}.dots .on{color:var(--r)}.controls{display:flex;justify-content:center;gap:16px;margin-top:12px}.controls{flex-wrap:wrap}.controls button{border:1px solid var(--line);background:#fff;border-radius:24px;padding:12px 20px;color:var(--n);font-weight:800}.done{display:none;text-align:center;margin:16px auto 4px;color:var(--n);line-height:1.45}.done strong{display:block;font-size:21px}.done em{display:block;font-size:15px;font-weight:500;margin-top:4px}.done.show{display:block}.bottom{position:fixed;bottom:0;left:0;right:0;height:60px;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;gap:85px;align-items:center;font-size:12px;z-index:5;text-align:center}
+@media(max-width:850px){.app{grid-template-columns:1fr}aside{display:none}main{padding:16px 13px 75px}.hero{grid-template-columns:1fr}.hero h1{font-size:58px}.heroart img{height:330px}.grid{grid-template-columns:1fr}.bottom{gap:25px}}
+</style></head><body><div class="app"><aside>
+<div class="brand">🐾 &nbsp; TUNNETYÖKORTIT</div><div class="tag">Tunne, ymmärrä, toimi.</div><div class="sect">PERUSTUNTEET</div>
+<div class="emo ilo"><img src="assets/vohveli-ilo.png">Ilo</div><div class="emo suru"><img src="assets/vohveli-suru.png">Suru</div><div class="emo viha"><img src="assets/vohveli-viha-thumb.png">Viha</div><div class="emo pelko"><img src="assets/vohveli-pelko.png">Pelko</div><div class="emo yll"><img src="assets/vohveli-yllatys.png">Yllättyneisyys</div><div class="emo inho"><img src="assets/vohveli-inho.png">Inho</div>
+<div class="sect">TIETOA KORTEISTA</div><div class="infobox"><div>ⓘ &nbsp; Mitä tunteet ovat?</div><div>▢ &nbsp; Näin käytät kortteja</div><div>♡ &nbsp; Tietoa hankkeesta</div></div><div class="motto">Kaikki tunteet ovat sallittuja.<br>Sinä päätät, mitä niillä teet.</div></aside>
+<main><div class="top"><span>← Takaisin tunteisiin</span><span>☆ Lisää suosikkeihin</span></div>
+<section class="hero"><div><div class="eyebrow">PERUSTUNNE</div><h1>VIHA</h1><p>Viha kertoo, että jokin asia tuntuu sinusta väärältä tai epäreilulta.</p><p>Se on voimakas tunne, joka syntyy, kun koet tulleesi loukatuksi, kohdelluksi epäoikeudenmukaisesti tai kun rajojasi rikotaan.</p><div class="msg"><b>⚡ &nbsp; Vihan viesti</b><p>“Jokin ei ole kohdallani ok.<br>Tarvitsen muutosta tai suojaa.”</p></div></div><div class="heroart"><img src="assets/vohveli-viha.png"></div></section>
+<div class="grid"><div class="card"><h3>⚡ MITÄ VIHA VOI KERTOA?</h3><ul><li>Tunnen, että minua kohdellaan epäreilusti</li><li>Minua ei kuunnella</li><li>Minua satutetaan tai loukataan</li><li>Rajojani ei kunnioiteta</li><li>Haluan muutosta</li></ul></div><div class="card"><h3>● KEHOSSA VOI TUNTUA</h3><ul><li>Sydän lyö nopeammin</li><li>Lihakset jännittyvät</li><li>Lämpöä kasvoissa ja kehossa</li><li>Nyrkit puristuvat</li><li>Hengitys nopeutuu</li><li>Ajatukset pyörivät kovaa</li></ul></div><div class="card"><h3>◎ MITÄ VOIN TEHDÄ?</h3><ul><li>Ota ensin vähän tilaa tunteelle.</li><li>Rauhoita kehoa ennen päätöksiä.</li><li>Päätä vasta sitten, mikä olisi turvallinen teko.</li></ul></div></div>
+<div class="title">✏️ &nbsp; HARJOITUKSIA</div><div class="grid">
+<div class="card ex"><h3><span class="num">1</span>PYSÄHDY &amp; HUOMAA</h3><p>Pysähdy hetkeksi ja huomaa, missä kehossasi viha tuntuu.</p><p>Mitä se tuntuu juuri nyt?<br>Missä se on?<br>Mitä se haluaa sinulle kertoa?</p><div class="start" id="open"><img src="assets/vohveli-harjoitus1.png"><div><b>Aloita harjoitus</b><br><small>Hengitä Vohvelin kanssa</small></div><button class="play">▶</button></div></div>
+<div class="card ex"><h3><span class="num">2</span>ANNA TILAA</h3><p>Ota muutama syvä hengitys.</p><p>Hengitä sisään nenän kautta (1...2...3...4) ja ulos suun kautta (1...2...3...4...5...6).</p><p>Toista viisi kertaa.</p><img class="eximg" src="assets/vohveli-harjoitus2.png"></div>
+<div class="card ex"><h3><span class="num">3</span>TOIMI VIISAASTI</h3><p>Mieti, mikä olisi pienin mahdollinen askel, joka auttaisi sinua tilanteessa.</p><ul><li>Voitko sanoa asiasta rauhallisesti?</li><li>Voitko poistua hetkeksi?</li><li>Voitko pyytää tukea?</li></ul><img class="eximg" src="assets/vohveli-harjoitus3.png"></div></div>
+<div class="title">VIHAN ALTA VOI LÖYTYÄ MYÖS...</div><div class="related"><div class="rel">😾 Ärtymys</div><div class="rel">😾 Turhautuminen</div><div class="rel">😾 Mustasukkaisuus</div><div class="rel">😾 Katkeruus</div><div class="rel">😿 Häpeä</div></div><div class="nav"><button>← Edellinen: Suru</button><button class="next">Seuraava: Pelko →</button></div></main></div>
+<div class="bottom"><span>⌂<br>Etusivu</span><span>♡<br>Suosikit</span><span>♨<br>Hengitysharjoitus</span><span>ⓘ<br>Tietoa</span><span>⚙<br>Asetukset</span></div>
+<div class="modalback" id="modal"><div class="modal">
+<button class="close" id="close">×</button>
+<h2>PYSÄHDY &amp; HUOMAA</h2><div class="sub">Hengitä Vohvelin kanssa</div>
+<div class="breathzone"><div class="circle" id="circle"></div><img class="breathcat" src="assets/vohveli-hengitys.png" alt="Rauhallinen Vohveli"></div>
+<div class="breathstatus"><div class="phase" id="phase">Valmistaudu rauhassa</div></div>
+<div class="round" id="round">Kierros 1 / 5</div><div class="dots" id="dots"></div>
+<div class="done" id="done"><strong>Harjoitus valmis 💛</strong><em>Huomaa hetki, miltä kehossasi tuntuu nyt.</em></div>
+<div class="controls"><button id="audio">🔊 &nbsp; Oma ääni päällä</button><button id="pause">Ⅱ &nbsp; Pysäytä</button><button id="restart">↻ &nbsp; Aloita alusta</button></div>
+</div></div>
+<script>
+
+const V15_TEMPLATE="<main><div class=\"top\"><span>← Takaisin tunteisiin</span><span>☆ Lisää suosikkeihin</span></div>\n<section class=\"hero\"><div><div class=\"eyebrow\">PERUSTUNNE</div><h1>VIHA</h1><p>Viha kertoo, että jokin asia tuntuu sinusta väärältä tai epäreilulta.</p><p>Se on voimakas tunne, joka syntyy, kun koet tulleesi loukatuksi, kohdelluksi epäoikeudenmukaisesti tai kun rajojasi rikotaan.</p><div class=\"msg\"><b>⚡ &nbsp; Vihan viesti</b><p>“Jokin ei ole kohdallani ok.<br>Tarvitsen muutosta tai suojaa.”</p></div></div><div class=\"heroart\"><img src=\"assets/vohveli-viha.png\"></div></section>\n<div class=\"grid\"><div class=\"card\"><h3>⚡ MITÄ VIHA VOI KERTOA?</h3><ul><li>Tunnen, että minua kohdellaan epäreilusti</li><li>Minua ei kuunnella</li><li>Minua satutetaan tai loukataan</li><li>Rajojani ei kunnioiteta</li><li>Haluan muutosta</li></ul></div><div class=\"card\"><h3>● KEHOSSA VOI TUNTUA</h3><ul><li>Sydän lyö nopeammin</li><li>Lihakset jännittyvät</li><li>Lämpöä kasvoissa ja kehossa</li><li>Nyrkit puristuvat</li><li>Hengitys nopeutuu</li><li>Ajatukset pyörivät kovaa</li></ul></div><div class=\"card\"><h3>◎ MITÄ VOIN TEHDÄ?</h3><ul><li>Ota ensin vähän tilaa tunteelle.</li><li>Rauhoita kehoa ennen päätöksiä.</li><li>Päätä vasta sitten, mikä olisi turvallinen teko.</li></ul></div></div>\n<div class=\"title\">✏️ &nbsp; HARJOITUKSIA</div><div class=\"grid\">\n<div class=\"card ex\"><h3><span class=\"num\">1</span>PYSÄHDY &amp; HUOMAA</h3><p>Pysähdy hetkeksi ja huomaa, missä kehossasi viha tuntuu.</p><p>Mitä se tuntuu juuri nyt?<br>Missä se on?<br>Mitä se haluaa sinulle kertoa?</p><div class=\"start\" id=\"open\"><img src=\"assets/vohveli-harjoitus1.png\"><div><b>Aloita harjoitus</b><br><small>Hengitä Vohvelin kanssa</small></div><button class=\"play\">▶</button></div></div>\n<div class=\"card ex\"><h3><span class=\"num\">2</span>ANNA TILAA</h3><p>Ota muutama syvä hengitys.</p><p>Hengitä sisään nenän kautta (1...2...3...4) ja ulos suun kautta (1...2...3...4...5...6).</p><p>Toista viisi kertaa.</p><img class=\"eximg\" src=\"assets/vohveli-harjoitus2.png\"></div>\n<div class=\"card ex\"><h3><span class=\"num\">3</span>TOIMI VIISAASTI</h3><p>Mieti, mikä olisi pienin mahdollinen askel, joka auttaisi sinua tilanteessa.</p><ul><li>Voitko sanoa asiasta rauhallisesti?</li><li>Voitko poistua hetkeksi?</li><li>Voitko pyytää tukea?</li></ul><img class=\"eximg\" src=\"assets/vohveli-harjoitus3.png\"></div></div>\n<div class=\"title\">VIHAN ALTA VOI LÖYTYÄ MYÖS...</div><div class=\"related\"><div class=\"rel\">😾 Ärtymys</div><div class=\"rel\">😾 Turhautuminen</div><div class=\"rel\">😾 Mustasukkaisuus</div><div class=\"rel\">😾 Katkeruus</div><div class=\"rel\">😿 Häpeä</div></div><div class=\"nav\"><button>← Edellinen: Suru</button><button class=\"next\">Seuraava: Pelko →</button></div></main>";
+const V15_CARDS={"viha": {"label": "VIHA", "color": "#ef1018", "soft": "#fff0f1", "img": "assets/vohveli-viha.png", "title": "Vihan viesti", "lead": "Jokin ei tunnu oikealta.", "desc": "Viha voi kertoa, että rajasi on ylitetty, sinua on kohdeltu epäreilusti tai jokin tärkeä asia on uhattuna.", "body": "Sydän hakkaa tai hengitys kiihtyy|Leuka, nyrkit tai hartiat jännittyvät|Kehossa tuntuu kuumuutta tai levottomuutta", "help": "Viha antaa energiaa puolustaa itseäsi, pitää kiinni rajoistasi ja yrittää muuttaa asioita.", "ex1": "Missä kohtaa kehoa viha tuntuu juuri nyt? Hengitä rauhallisesti Vohvelin kanssa.", "ex2": "Ota pieni etäisyys tilanteeseen. Liiku, ravistele käsiä tai käy hetki rauhallisessa paikassa.", "ex3": "Kun olo tasaantuu, kerro mitä tarvitset: “Minua harmitti, kun…” tai “Tarvitsen nyt…”"}, "suru": {"label": "SURU", "color": "#3976c5", "soft": "#eef6ff", "img": "assets/vohveli-suru.png", "title": "Surun viesti", "lead": "Jokin tärkeä on muuttunut tai menetetty.", "desc": "Suru kertoo usein menetyksestä, pettymyksestä, ikävästä tai yksinäisyydestä. Se muistuttaa siitä, mikä tai kuka on meille tärkeä.", "body": "Kehossa voi tuntua raskaalta tai väsyneeltä|Kurkussa voi olla pala ja silmiin nousta kyyneleitä|Tekee mieli vetäytyä, olla hiljaa tai hakea läheisyyttä", "help": "Suru auttaa pysähtymään menetyksen äärelle, hakemaan lohtua ja vähitellen sopeutumaan muutokseen.", "ex1": "Anna surun olla hetken. Sinun ei tarvitse saada tunnetta heti pois.", "ex2": "Hae lohtua: turvallinen ihminen, rauhallinen paikka tai jokin sinulle tärkeä asia voi auttaa.", "ex3": "Kerro tai kirjoita yksi asia, jota kaipaat tai joka teki sinut surulliseksi."}, "ilo": {"label": "ILO", "color": "#e2a000", "soft": "#fff8df", "img": "assets/vohveli-ilo.png", "title": "Ilon viesti", "lead": "Jotain hyvää tapahtuu juuri nyt.", "desc": "Ilo kertoo asioista, jotka tuntuvat hyvältä, tärkeältä tai merkitykselliseltä. Se voi syntyä myös hyvin pienestä hetkestä.", "body": "Kasvot rentoutuvat ja hymy nousee helposti|Kehossa voi tuntua keveyttä, lämpöä tai energiaa|Tekee mieli nauraa, liikkua tai jakaa hetki jonkun kanssa", "help": "Ilo vahvistaa hyvinvointia ja yhteyttä toisiin sekä auttaa huomaamaan elämässä olevia hyviä asioita.", "ex1": "Pysähdy hetkeksi ja huomaa: mikä tässä hetkessä tuntuu hyvältä?", "ex2": "Anna ilon näkyä. Hymyile, liiku, naura tai tee jotain, mikä tuntuu hyvältä.", "ex3": "Jaa ilo: kerro yhdelle ihmiselle jotain hyvää, joka sinulle tapahtui."}, "pelko": {"label": "PELKO", "color": "#7655a6", "soft": "#f5efff", "img": "assets/vohveli-pelko.png", "title": "Pelon viesti", "lead": "Jokin saattaa olla vaarallista tai epävarmaa.", "desc": "Pelko valmistaa meitä suojelemaan itseämme. Joskus vaara on todellinen, joskus keho hälyttää myös silloin, kun tilanne vain tuntuu epävarmalta.", "body": "Sydän hakkaa ja hengitys voi muuttua nopeaksi|Vatsa voi tuntua oudolta ja lihakset jännittyä|Tekee mieli paeta, piiloutua, jähmettyä tai hakea turvaa", "help": "Pelko auttaa huomaamaan vaaroja, olemaan varovainen ja etsimään turvaa silloin, kun sitä tarvitsemme.", "ex1": "Katso ympärillesi ja nimeä kolme asiaa, jotka näet. Huomaa, missä olet juuri nyt.", "ex2": "Rauhoita kehoa: hengitä hitaasti ulos ja tunne jalkasi lattiaa vasten.", "ex3": "Hae turvaa. Mene turvallisen ihmisen luo tai kerro: “Minua pelottaa ja tarvitsen tukea.”"}, "yllatys": {"label": "YLLÄTTYNEISYYS", "color": "#d67a22", "soft": "#fff4e8", "img": "assets/vohveli-yllatys.png", "title": "Yllättyneisyyden viesti", "lead": "Jotain odottamatonta tapahtui.", "desc": "Yllättyneisyys pysäyttää huomion nopeasti uuden asian äärelle. Se voi muuttua hetkessä iloksi, peloksi, vihaksi tai joksikin muuksi tunteeksi.", "body": "Silmät avautuvat ja huomio terävöityy|Hengitys voi hetkeksi pysähtyä tai muuttua|Kehossa voi tuntua säpsähdys tai nopea energian nousu", "help": "Yllättyneisyys auttaa suuntaamaan huomion nopeasti muutokseen ja selvittämään, mitä ympärillä tapahtuu.", "ex1": "Pysähdy hetkeksi ennen kuin toimit. Mitä juuri tapahtui?", "ex2": "Katso ympärillesi ja tarkista rauhassa, tarvitseeko tilanteeseen reagoida.", "ex3": "Nimeä seuraava tunne: muuttuiko yllätys iloksi, peloksi, vihaksi, uteliaisuudeksi vai joksikin muuksi?"}, "inho": {"label": "INHO", "color": "#638d49", "soft": "#f1f8ea", "img": "assets/vohveli-inho.png", "title": "Inhon viesti", "lead": "Haluan ottaa tästä etäisyyttä.", "desc": "Inho voi suojata meitä esimerkiksi pilaantuneelta ruoalta, epämiellyttäviltä asioilta tai tilanteilta, jotka rikkovat omia rajojamme.", "body": "Kasvot vetäytyvät tai nenä menee ryppyyn|Vatsassa voi muljahtaa tai tulla etova olo|Tekee mieli kääntyä pois, perääntyä tai työntää asia kauemmas", "help": "Inho auttaa välttämään mahdollisesti haitallisia asioita ja tunnistamaan omia rajoja.", "ex1": "Huomaa, mihin kehosi reagoi. Sinun ei tarvitse tehdä tunteelle heti mitään.", "ex2": "Jos voit, ota sopiva etäisyys siitä, mikä tuntuu epämiellyttävältä.", "ex3": "Tarkista rajasi: onko tämä vain epämiellyttävää vai kertooko tunne, että sinun täytyy sanoa ei?"}};
+function setTextByIncludes(root,needle,value){
+  [...root.querySelectorAll('*')].filter(e=>e.children.length===0 && (e.textContent||'').includes(needle)).forEach(e=>e.textContent=value);
+}
+function renderV15(key){
+ const d=V15_CARDS[key]||V15_CARDS.viha;
+ const holder=document.createElement('div'); holder.innerHTML=V15_TEMPLATE;
+ const nm=holder.querySelector('main');
+ document.documentElement.style.setProperty('--r',d.color);
+ // Main title + hero content
+ const h1=nm.querySelector('h1'); if(h1)h1.textContent=d.label;
+ const hero=nm.querySelector('.hero'); if(hero)hero.style.background=d.soft;
+ const himg=hero&&hero.querySelector('img'); if(himg){himg.src=d.img;himg.alt='Vohveli ja '+d.label.toLowerCase();}
+ // Use structural positions from v13.
+ const h2s=[...nm.querySelectorAll('h2')]; if(h2s[0])h2s[0].textContent=d.title;
+ const big=nm.querySelector('.bigmsg'); if(big)big.textContent=d.lead;
+ if(hero){const ps=hero.querySelectorAll('p'); if(ps.length)ps[ps.length-1].textContent=d.desc;}
+ const infos=nm.querySelectorAll('.info');
+ if(infos[0]){const ul=infos[0].querySelector('ul');if(ul)ul.innerHTML=d.body.split('|').map(x=>'<li>'+x+'</li>').join('');}
+ if(infos[1]){const p=infos[1].querySelector('p');if(p)p.textContent=d.help;}
+ const ex=nm.querySelectorAll('.exercise');
+ const texts=[d.ex1,d.ex2,d.ex3];
+ ex.forEach((e,i)=>{const p=e.querySelector('p');if(p&&texts[i])p.textContent=texts[i];});
+ // Breathing button only belongs to anger for now.
+ if(key!=='viha'){const b=nm.querySelector('#open');if(b)b.remove();}
+ document.querySelector('main').replaceWith(nm);
+ const open=document.getElementById('open'); if(open)open.onclick=()=>{modal.classList.add('open');reset()};
+ location.hash=key;
+ highlightV15(key);
+}
+function highlightV15(key){
+ const names={ilo:'ilo',suru:'suru',viha:'viha',pelko:'pelko','yllättyneisyys':'yllatys',inho:'inho'};
+ document.querySelectorAll('aside *').forEach(e=>{
+  const t=(e.textContent||'').trim().toLowerCase();
+  if(names[t]) e.classList.toggle('active',names[t]===key);
+ });
+}
+function wireV15(){
+ const names={ilo:'ilo',suru:'suru',viha:'viha',pelko:'pelko','yllättyneisyys':'yllatys',inho:'inho'};
+ document.querySelectorAll('aside *').forEach(e=>{
+   const t=(e.textContent||'').trim().toLowerCase();
+   if(names[t]){e.style.cursor='pointer';e.onclick=()=>renderV15(names[t]);}
+ });
+ // Remove Häpeä from the sidebar entirely.
+ document.querySelectorAll('aside *').forEach(e=>{if((e.textContent||'').trim().toLowerCase()==='häpeä')e.remove();});
+}
+
+const modal=document.getElementById('modal'),circle=document.getElementById('circle'),
+phaseEl=document.getElementById('phase'),roundEl=document.getElementById('round'),dots=document.getElementById('dots'),
+pauseBtn=document.getElementById('pause'),audioBtn=document.getElementById('audio'),doneEl=document.getElementById('done');
+
+const clips={
+  intro:new Audio('audio/intro.m4a'),
+  inhale:new Audio('audio/inhale.m4a'),
+  exhale:new Audio('audio/exhale.m4a'),
+  outro:new Audio('audio/outro.m4a')
+};
+Object.values(clips).forEach(a=>{a.preload='auto';a.volume=.95});
+let audioOn=true,paused=false,finished=false,round=1,raf=0,token=0;
+let waitResolve=null,waitTimer=null,waitStarted=0,waitRemaining=0,currentClip=null;
+function stopGuide(){
+  Object.values(clips).forEach(a=>{a.pause();a.currentTime=0});
+  currentClip=null;
+}
+function playClip(name){
+  if(!audioOn)return;
+  if(currentClip){currentClip.pause();currentClip.currentTime=0}
+  const a=clips[name];currentClip=a;a.currentTime=0;
+  const p=a.play();if(p&&p.catch)p.catch(()=>{});
+}
+function sleep(ms,myToken){return new Promise(resolve=>{
+  waitResolve=resolve;waitRemaining=ms;waitStarted=performance.now();
+  waitTimer=setTimeout(()=>{waitTimer=null;waitResolve=null;resolve()},ms);
+})}
+function pauseWait(){if(waitTimer){clearTimeout(waitTimer);waitTimer=null;waitRemaining=Math.max(0,waitRemaining-(performance.now()-waitStarted))}}
+function resumeWait(){if(waitResolve&&!waitTimer){waitStarted=performance.now();const r=waitResolve;waitTimer=setTimeout(()=>{waitTimer=null;waitResolve=null;r()},waitRemaining)}}
+function setProgress(){roundEl.textContent=`Kierros ${round} / 5`;dots.innerHTML=[1,2,3,4,5].map(n=>`<span class="${n<=round?'on':''}">●</span>`).join(' ')}
+function setPhase(text){phaseEl.textContent=text;phaseEl.classList.remove('pause')}
+function animateCircle(from,to,duration,myToken){return new Promise(resolve=>{
+  let start=null,pausedAt=null,totalPaused=0;
+  function frame(now){
+    if(myToken!==token||finished){resolve();return}
+    if(paused){if(pausedAt===null)pausedAt=now;raf=requestAnimationFrame(frame);return}
+    if(pausedAt!==null){totalPaused+=now-pausedAt;pausedAt=null}
+    if(start===null)start=now;
+    const t=Math.min(1,(now-start-totalPaused)/duration);
+    const eased=t*t*(3-2*t),scale=from+(to-from)*eased;
+    circle.style.transform=`scale(${scale})`;
+    circle.style.opacity=String(.64+Math.sin(t*Math.PI)*.22);
+    if(t<1)raf=requestAnimationFrame(frame);else resolve();
+  }
+  raf=requestAnimationFrame(frame);
+})}
+async function cycle(myToken){
+  setProgress();setPhase('Valmistaudu rauhassa');circle.style.transform='scale(.62)';
+  playClip('intro');await sleep(3600,myToken);if(myToken!==token)return;
+  for(round=1;round<=5;round++){
+    setProgress();setPhase('Hengitä sisään…');playClip('inhale');
+    await animateCircle(.62,1.20,4000,myToken);if(myToken!==token)return;
+    // 0,5 s hiljainen pysähdys: teksti pysyy samana, taukoa ei nimetä ruudulla.
+    await sleep(500,myToken);if(myToken!==token)return;
+    setPhase('Hengitä ulos…');playClip('exhale');
+    await animateCircle(1.20,.62,6000,myToken);if(myToken!==token)return;
+    await sleep(500,myToken);if(myToken!==token)return;
+  }
+  finished=true;setPhase('');roundEl.textContent='5 / 5 kierrosta';
+  dots.innerHTML='<span class="on">●</span> <span class="on">●</span> <span class="on">●</span> <span class="on">●</span> <span class="on">●</span>';
+  doneEl.classList.add('show');pauseBtn.disabled=true;playClip('outro');
+}
+function reset(){
+  token++;cancelAnimationFrame(raf);if(waitTimer)clearTimeout(waitTimer);waitTimer=null;waitResolve=null;stopGuide();
+  paused=false;finished=false;round=1;doneEl.classList.remove('show');pauseBtn.disabled=false;pauseBtn.textContent='Ⅱ   Pysäytä';
+  circle.style.transform='scale(.62)';circle.style.opacity='.64';setProgress();cycle(token);
+}
+function closeExercise(){token++;cancelAnimationFrame(raf);if(waitTimer)clearTimeout(waitTimer);waitTimer=null;waitResolve=null;stopGuide();modal.classList.remove('open')}
+document.getElementById('open').onclick=()=>{
+  modal.classList.add('open');
+  // Esiladataan erilliset kokonaiset puheklipit. JavaScript ei katkaise sanoja ajastimella.
+  Object.values(clips).forEach(a=>a.load());
+  reset();
+};
+document.getElementById('close').onclick=closeExercise;
+modal.onclick=e=>{if(e.target===modal)closeExercise()};
+pauseBtn.onclick=()=>{
+  if(finished)return;paused=!paused;pauseBtn.textContent=paused?'▶   Jatka':'Ⅱ   Pysäytä';
+  if(paused){pauseWait();if(currentClip)currentClip.pause()}else{resumeWait();if(currentClip&&audioOn)currentClip.play().catch(()=>{})}
+};
+audioBtn.onclick=()=>{audioOn=!audioOn;if(!audioOn)stopGuide();audioBtn.textContent=audioOn?'🔊   Oma ääni päällä':'🔇   Ääni pois'};
+document.getElementById('restart').onclick=reset;
+setProgress();
+wireV15();
+setTimeout(()=>renderV15((location.hash||'#viha').slice(1)),0);
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+</script></body></html>
