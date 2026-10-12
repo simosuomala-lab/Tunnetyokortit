@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 430" role="img" aria-label="Vohveli istuu">
+<defs><linearGradient id="fur" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff6e4"/><stop offset="1" stop-color="#eac89f"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="8"/></filter></defs>
+<!-- tail -->
+<path d="M267 340 Q358 356 340 287 Q333 257 306 266" fill="none" stroke="#a77a5a" stroke-width="30" stroke-linecap="round"/>
+<path d="M267 340 Q358 356 340 287 Q333 257 306 266" fill="none" stroke="#f1d5ad" stroke-width="23" stroke-linecap="round"/>
+<!-- body -->
+<ellipse cx="200" cy="288" rx="113" ry="115" fill="url(#fur)" stroke="#ac805d" stroke-width="5"/>
+<path d="M137 220 Q165 196 191 222 Q199 261 172 290 Q148 281 137 220" fill="#bc9277" opacity=".85"/>
+<path d="M238 219 Q273 205 285 236 Q271 277 239 282 Q225 258 238 219" fill="#dfb36c" opacity=".82"/>
+<ellipse cx="202" cy="298" rx="60" ry="82" fill="#fff9ef" opacity=".93"/>
+<!-- hind legs -->
+<ellipse cx="129" cy="363" rx="50" ry="39" fill="#ebc89f" stroke="#ac805d" stroke-width="4"/>
+<ellipse cx="270" cy="363" rx="50" ry="39" fill="#ebc89f" stroke="#ac805d" stroke-width="4"/>
+<!-- front legs -->
+<path d="M158 264 Q147 321 152 381 Q169 395 188 379 L191 290" fill="#f7e4c5" stroke="#ac805d" stroke-width="4"/>
+<path d="M244 263 Q256 318 249 381 Q230 396 212 380 L210 289" fill="#f7e4c5" stroke="#ac805d" stroke-width="4"/>
+<path d="M161 375 Q171 381 184 375 M219 376 Q233 383 244 374" fill="none" stroke="#ba9170" stroke-width="3"/>
+<!-- ears -->
+<path d="M104 136 L100 35 Q133 47 159 78 L244 77 Q277 42 305 35 L297 144" fill="#efcf9e" stroke="#a77a5a" stroke-width="5" stroke-linejoin="round"/>
+<path d="M116 113 L114 57 L154 96 M249 96 L292 57 L285 116" fill="#e8a9a2"/>
+<!-- face -->
+<ellipse cx="201" cy="149" rx="115" ry="104" fill="#fff2d9" stroke="#a77a5a" stroke-width="5"/>
+<path d="M90 117 Q95 70 142 60 Q170 81 164 120 Q132 135 90 117" fill="#b48b72"/>
+<path d="M230 53 Q285 56 306 114 Q280 139 239 119 Q217 93 230 53" fill="#d9a46d"/>
+<path d="M194 49 Q218 61 221 91 Q205 113 185 98 Q179 70 194 49" fill="#b48b72"/>
+<!-- eyes and smile -->
+<path d="M132 149 Q151 130 170 150 M232 150 Q251 131 270 148" fill="none" stroke="#54483f" stroke-width="7" stroke-linecap="round"/>
+<path d="M191 180 Q201 188 211 180 L201 194 Z" fill="#ad8179"/>
+<path d="M201 193 Q186 211 171 196 M201 193 Q216 211 231 196" fill="none" stroke="#805a50" stroke-width="4" stroke-linecap="round"/>
+<path d="M135 186 L71 175 M133 196 L73 201 M269 186 L329 175 M269 196 L329 201" fill="none" stroke="#a98c78" stroke-width="3" stroke-linecap="round"/>
+<!-- exact semantic highlight paths painted above the cat, initially invisible -->
+<g class="v60-highlight" data-part="Kasvot ja posket"><ellipse cx="141" cy="185" rx="28" ry="20"/><ellipse cx="261" cy="185" rx="28" ry="20"/></g>
+<g class="v60-highlight" data-part="Rintakehä"><path d="M167 225 Q201 205 235 225 L240 261 Q201 280 163 260Z"/></g>
+<g class="v60-highlight" data-part="Keskivartalo"><ellipse cx="201" cy="313" rx="48" ry="35"/></g>
+<g class="v60-highlight" data-part="Kädet"><path d="M155 278 Q168 266 187 281 L185 374 Q170 388 153 374Z"/><path d="M215 280 Q234 266 247 278 L249 374 Q232 389 215 375Z"/></g>
+<g class="v60-highlight" data-part="Jalat"><ellipse cx="126" cy="369" rx="44" ry="29"/><ellipse cx="273" cy="369" rx="44" ry="29"/></g>
+</svg>
