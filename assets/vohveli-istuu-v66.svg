@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 650" aria-label="Istuva Vohveli, pehmeästi kuvitettu kolmivärinen kissa">
+<defs><radialGradient id="cream"><stop stop-color="#fffdf5"/><stop offset=".75" stop-color="#f7e8cf"/><stop offset="1" stop-color="#e8cba7"/></radialGradient><radialGradient id="orange"><stop stop-color="#f5d69d"/><stop offset="1" stop-color="#ce8f52"/></radialGradient><radialGradient id="brown"><stop stop-color="#9d7c6e"/><stop offset="1" stop-color="#6d504a"/></radialGradient><linearGradient id="belly" x1="0" y1="0" x2=".2" y2="1"><stop stop-color="#fffdf7"/><stop offset="1" stop-color="#f0d9b9"/></linearGradient><filter id="soft"><feGaussianBlur stdDeviation="4"/></filter></defs>
+<!-- tail behind the body -->
+<path d="M417 499 C529 528 562 454 532 401 C518 377 491 385 480 398" fill="none" stroke="#ac7d63" stroke-width="67" stroke-linecap="round"/>
+<path d="M417 499 C529 528 562 454 532 401 C518 377 491 385 480 398" fill="none" stroke="#e8c49b" stroke-width="55" stroke-linecap="round"/>
+<path d="M517 434 Q545 441 545 469" stroke="#c58d67" stroke-width="20" fill="none" opacity=".6"/>
+<!-- rounded seated silhouette -->
+<path d="M195 315 C124 333 103 427 126 517 Q151 583 301 578 Q450 583 474 511 C498 416 451 326 394 310 Z" fill="url(#cream)" stroke="#a8876c" stroke-width="7" stroke-linejoin="round"/>
+<path d="M149 417 C153 360 194 339 230 347 Q247 407 211 483 Q170 495 149 417" fill="url(#brown)" opacity=".82"/>
+<path d="M376 345 C424 345 461 385 461 443 Q443 481 407 489 Q368 422 376 345" fill="url(#orange)" opacity=".86"/>
+<ellipse cx="303" cy="456" rx="94" ry="114" fill="url(#belly)"/>
+<!-- fluffy seated haunches -->
+<ellipse cx="185" cy="539" rx="79" ry="55" fill="#eac79f" stroke="#a8876c" stroke-width="6"/>
+<ellipse cx="418" cy="539" rx="79" ry="55" fill="#edc99d" stroke="#a8876c" stroke-width="6"/>
+<!-- front legs, separate and rounded -->
+<path d="M260 428 C249 481 246 534 253 572 Q274 595 296 575 L298 447" fill="#fff8e9" stroke="#ae8b71" stroke-width="6"/>
+<path d="M342 429 C354 484 354 538 345 572 Q325 595 306 575 L303 447" fill="#fff8e9" stroke="#ae8b71" stroke-width="6"/>
+<path d="M259 567 Q277 576 293 567 M312 568 Q329 576 346 567" fill="none" stroke="#d6b49a" stroke-width="5" stroke-linecap="round"/>
+<!-- triangular ears, carefully behind head -->
+<path d="M154 225 L151 81 Q206 98 236 142 Q303 125 362 142 Q395 93 451 79 L451 228" fill="#f0d1a8" stroke="#a8876c" stroke-width="7" stroke-linejoin="round"/>
+<path d="M172 187 L171 109 Q203 124 222 160Z" fill="#e9a7a7"/><path d="M384 159 Q405 123 432 109 L433 187Z" fill="#e9a7a7"/>
+<!-- face, large expressive illustration -->
+<path d="M305 127 C202 111 129 173 127 266 Q125 377 301 387 Q474 379 474 266 C474 176 406 124 305 127Z" fill="url(#cream)" stroke="#a8876c" stroke-width="7"/>
+<path d="M129 256 Q128 150 217 135 Q261 153 263 212 Q237 264 176 276Z" fill="url(#brown)"/>
+<path d="M339 139 Q434 136 466 219 L467 264 Q406 271 362 230 Q338 189 339 139" fill="url(#orange)"/>
+<path d="M274 133 Q304 118 328 136 L324 194 Q298 219 272 188Z" fill="url(#brown)"/>
+<!-- fluffy cheek contours -->
+<path d="M139 298 Q149 333 172 338 M463 298 Q451 335 427 339" fill="none" stroke="#d4b496" stroke-width="7" stroke-linecap="round"/>
+<!-- calm smiling eyes -->
+<path d="M206 269 Q235 242 265 270 M341 270 Q370 243 400 267" fill="none" stroke="#5b4a47" stroke-width="10" stroke-linecap="round"/>
+<ellipse cx="209" cy="304" rx="30" ry="15" fill="#e7a5a0" opacity=".46"/><ellipse cx="397" cy="304" rx="30" ry="15" fill="#e7a5a0" opacity=".46"/>
+<path d="M287 308 Q303 324 319 308 Q302 337 287 308Z" fill="#bb8684"/>
+<path d="M303 330 Q286 350 270 335 M303 330 Q320 350 336 335" stroke="#84675d" stroke-width="5" fill="none" stroke-linecap="round"/>
+<g stroke="#b29b8b" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M217 322 L129 310 M216 334 L130 341 M390 322 L475 310 M390 334 L476 341"/></g>
+</svg>
